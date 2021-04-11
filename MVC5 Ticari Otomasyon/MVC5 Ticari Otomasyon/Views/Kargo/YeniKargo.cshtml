@@ -1,0 +1,36 @@
+﻿@model MVC5_Ticari_Otomasyon.Models.Sınıflar.KargoDetay
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<h2>Kargo Takip Sistemi</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.TakipKodu)
+    <input type="text" value="@ViewBag.takipkod" class="form-control" readonly />
+    <br />
+    @Html.LabelFor(x => x.Acıklama)
+    @Html.TextBoxFor(x => x.Acıklama, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.Personel)
+    @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Alıcı)
+    @Html.TextBoxFor(x => x.Alıcı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success" id="btn1">Ekle</button>
+    <script>
+        $('#btn1').click(function () {
+            alert("Kargo Eklendi");
+        })
+    </script>
+</form>
+

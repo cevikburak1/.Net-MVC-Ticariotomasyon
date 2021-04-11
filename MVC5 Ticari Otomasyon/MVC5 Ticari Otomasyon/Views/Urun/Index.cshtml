@@ -1,0 +1,60 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model List<Ürünler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>AD</th>
+            <th>MARKA</th>
+            <th>STOK</th>
+            <th>ALIŞFİYAT</th>
+            <th>SATIŞFİYAT</th>
+            <th>DURUM</th>
+            <th>ÜRÜN GÖRSEL</th>
+            <th>KATEGORİSİ</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+        </thead>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.UrunId</td>
+                <td>@u.UrunAd</td>
+                <td>@u.Marka</td>
+                <td>@u.Stok</td>
+                <td>@u.AlışFiyat</td>
+                <td>@u.SatışFiyat</td>
+                <td>@u.Durum</td>
+                <td>@u.UrunGorsel</td>
+                <td>@u.Kategori.KategoriAd</td>
+                <td><a href="/Urun/UrunSıl/@u.UrunId" class="btn btn-warning">Sil</a></td>
+                <td><a href="/Urun/UrunGetir/@u.UrunId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+
+        }
+</table>
+<a href="/Urun/UrunEkle" class="btn btn-danger">Ürün Ekleme Sayfası</a>
+
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>

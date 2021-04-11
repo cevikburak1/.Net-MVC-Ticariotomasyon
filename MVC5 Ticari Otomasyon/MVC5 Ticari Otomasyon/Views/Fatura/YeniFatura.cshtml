@@ -1,0 +1,33 @@
+﻿@model MVC5_Ticari_Otomasyon.Models.Sınıflar.Fatura
+@{
+    ViewBag.Title = "YeniFatura";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>YeniFatura</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.FaturaSırano)
+    @Html.TextBoxFor(x => x.FaturaSırano, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FaturaTarih)
+    @Html.TextBoxFor(x => x.FaturaTarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.VergiDairesi)
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeslimEden)
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeslimAlan)
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.toplamtutar)
+    @Html.TextBoxFor(x => x.toplamtutar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FaturaSaat)
+    @Html.TextBoxFor(x => x.FaturaSaat, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success" style="background-color:aqua">Kaydet</button>
+</form>
+

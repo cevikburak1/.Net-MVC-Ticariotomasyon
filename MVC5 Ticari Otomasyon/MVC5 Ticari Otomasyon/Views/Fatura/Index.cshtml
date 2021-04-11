@@ -1,0 +1,56 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model List<Fatura>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Sıra No</td>
+            <td>Tarih</td>
+            <td>Vergi Dairesi</td>
+            <td>Fatura Saat</td>
+            <td>Toplam</td>
+            <td>Teslim Eden</td>
+            <td>Teslim Alan</td>
+            <td>Güncelle</td>
+            <td>Detay</td>
+
+        </tr>
+    </thead>
+    @foreach (var k in Model)
+    {
+<tr>
+    <td>@k.FaturaId</td>
+    <td>@k.FaturaSırano</td>
+    <td>@k.FaturaTarih</td>
+    <td>@k.VergiDairesi</td>
+    <td>@k.FaturaSaat</td>
+    <td>@k.toplamtutar</td>
+    <td>@k.TeslimEden</td>
+    <td>@k.TeslimAlan</td>
+
+    <td><a href="/Fatura/FaturGetir//@k.FaturaId" class="btn btn-success" style="background-color:darkorchid">Güncelle</a></td>
+    <td><a href="/Fatura/FaturaDetay//@k.FaturaId" class="btn btn-success" style="background-color:grey">Detay</a></td>
+</tr>
+    }
+
+</table>
+<a href="/Fatura/YeniFatura" class="btn btn-warning" style="background-color:darkgray">Yeni Fatura Oluştur</a>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>

@@ -1,0 +1,26 @@
+﻿@model MVC5_Ticari_Otomasyon.Models.Sınıflar.Departman
+@{
+    ViewBag.Title = "YeniDepartman";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<h2>Departman Ekleme</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.DepartmanAd)
+    @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Durum)
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-danger" id="btn1" style="background-color:firebrick">Ekle</button>
+    <script>
+        $('#btn1').click(function () {
+            alert("Departman Eklendi");
+        })
+    </script>
+
+</form>
+

@@ -1,0 +1,30 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "KargoDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table id="tbl1" class=" table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <td>Acıklama</td>
+            <td>Tarih</td>
+          
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Acıklama</td>
+            <td>@x.Tarih</td>
+            
+        </tr>
+    }
+
+</table>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>

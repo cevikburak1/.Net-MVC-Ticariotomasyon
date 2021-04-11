@@ -1,0 +1,43 @@
+﻿@model MVC5_Ticari_Otomasyon.Models.Sınıflar.Ürünler
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<h2>Ürün Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.UrunAd)
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Marka)
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Stok)
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AlışFiyat)
+    @Html.TextBoxFor(x => x.AlışFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SatışFiyat)
+    @Html.TextBoxFor(x => x.SatışFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Durum)
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunGorsel)
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.KategoriId)
+    @Html.DropDownListFor(x => x.KategoriId, (List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-danger" ıd="btn1">Ekle</button>
+    <script>
+        $('#btn1').click(function () {
+            alert("Ürün Başarı İle Eklendi ");
+        })
+    </script>
+</form>
+

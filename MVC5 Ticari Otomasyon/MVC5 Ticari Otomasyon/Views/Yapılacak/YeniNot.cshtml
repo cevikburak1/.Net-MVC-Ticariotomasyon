@@ -1,0 +1,21 @@
+﻿@model MVC5_Ticari_Otomasyon.Models.Sınıflar.Yapılcaklar
+@{
+    ViewBag.Title = "YeniNot";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Not Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.baslık)
+    @Html.TextBoxFor(x => x.baslık, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Durum)
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+
+</form>
+
+

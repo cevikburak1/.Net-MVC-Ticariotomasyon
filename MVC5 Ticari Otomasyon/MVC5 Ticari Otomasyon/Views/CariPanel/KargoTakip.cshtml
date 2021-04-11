@@ -1,0 +1,49 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("KargoTakip", "CariPanel", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+
+
+            <td>Personel</td>
+            <td>Alıcı</td>
+            <td>Tarih</td>
+            <td>Takip Kodu</td>
+            <td>Detaylar</td>
+
+        </tr>
+    </thead>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Personel</td>
+            <td> @k.Alıcı</td>
+            <td> @k.Tarih</td>
+            <td>@k.TakipKodu</td>
+            <td><a href="/CariPanel/CariKargoDetay/@k.TakipKodu" class="btn btn-success" style="background-color:darkorchid">Detay</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Kargo/YeniKargo" class="btn btn-warning" style="background-color:darkgray">Yeni Kargo Ekle</a>
+
+
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+
+

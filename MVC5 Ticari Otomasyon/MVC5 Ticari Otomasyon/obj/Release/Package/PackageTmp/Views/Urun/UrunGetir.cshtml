@@ -1,0 +1,37 @@
+﻿@model MVC5_Ticari_Otomasyon.Models.Sınıflar.Ürünler  
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Ürün Güncelleme Sayafası</h2>
+<br />
+@using(Html.BeginForm("UrunGuncelle","Urun",FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.UrunAd)
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Marka)
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Stok)
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AlışFiyat)
+    @Html.TextBoxFor(x => x.AlışFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SatışFiyat)
+    @Html.TextBoxFor(x => x.SatışFiyat, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.Kategori.KategoriId)
+    @Html.DropDownListFor(x => x.KategoriId, (List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunGorsel)
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+
+    @Html.HiddenFor(x => x.UrunId)
+</div>
+<button class="btn btn-danger">Güncelle</button>
+}

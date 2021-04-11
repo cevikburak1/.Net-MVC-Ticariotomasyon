@@ -1,0 +1,26 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model List<SatışHareket>
+@{
+    ViewBag.Title = "Siparişlerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<h2>Sipariş Geçmişim</h2>
+<br />
+<table class=" table table-bordered">
+    <tr>
+        <td>Ürün Adı:</td>
+        <td>Fiyat:</td>
+        <td>Tarih:</td>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.Ürünler.UrunAd</td>
+    <td>@x.Fiyat</td>
+    <td>@Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")</td>
+  
+</tr>
+    }
+</table>
+

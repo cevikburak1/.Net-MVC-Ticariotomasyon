@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Index4";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index4</h2>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Result Visualization</title>
+
+    
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $.ajax({
+
+                type: "POST",
+
+                dataType: "json",
+
+                contentType: "application/json",
+
+                url: '@Url.Action("VisualizeUrunResult", "Grafik")',
+
+                success: function (result) {
+
+                    google.charts.load('current', {
+
+                        'packages': ['corechart']
+
+                    });
+
+                    google.charts.setOnLoadCallback(function () {
+
+                        drawChart(result);
+
+                    });
+
+                }
+
+            });
+
+        });
+
+
+
+        function drawChart(result) {
+
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('string', 'Name');
+
+            data.addColumn('number', 'Marks Obtained');
+
+            var dataArray = [];
+
+
+
+            $.each(result, function (i, obj) {
+
+                dataArray.push([obj.stdName, obj.marksObtained]);
+
+            });
+
+            data.addRows(dataArray);
+
+
+
+            var columnChartOptions = {
+
+                title: "Students Performance",
+
+                width: 1000,
+
+                height: 400,
+
+                bar: { groupWidth: "20%" },
+
+            };
+
+
+
+            var columnChart = new google.visualization.ColumnChart(document
+
+                .getElementById('columnchart_div'));
+
+
+
+            columnChart.draw(data, columnChartOptions);
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="columnchart_div"></div>
+
+
+
+</body>
+
+
+
+</html>

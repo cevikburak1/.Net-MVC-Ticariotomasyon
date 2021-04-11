@@ -1,0 +1,56 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model List<Ürünler>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Ürün Bilgileri</h3>
+
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Urun Ad</th>
+                            <th>Marka</th>
+                            <th>Stok</th>
+                            <th>Alış Fiyat</th>
+                            <th>Satış Fiyat</th>
+                            <th>Kategorisi</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        { 
+                        <tr>
+                            <td>@x.UrunId</td>
+                            <td>@x.UrunAd</td>
+                            <td>@x.Marka</td>
+                            <td>@x.Stok</td>
+                            <td>@x.AlışFiyat</td>
+                            <td>@x.SatışFiyat</td>
+                            <td>@x.Kategori.KategoriAd</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>

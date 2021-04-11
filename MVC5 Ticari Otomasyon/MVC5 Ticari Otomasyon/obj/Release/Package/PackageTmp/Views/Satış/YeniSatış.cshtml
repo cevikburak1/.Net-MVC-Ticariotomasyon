@@ -1,0 +1,46 @@
+﻿@model MVC5_Ticari_Otomasyon.Models.Sınıflar.SatışHareket
+@{
+    ViewBag.Title = "YeniSatış";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Satış</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Personelid)
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Urunid)
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dro, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Carilerid)
+    @Html.DropDownListFor(x => x.Carilerid, (List<SelectListItem>)ViewBag.dr, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adet)
+    <input type="number"  name="Adet"class="form-control" min="1" id="txt1" onkeyup="sum" />
+    <br />
+    @Html.LabelFor(x => x.Fiyat)
+    <input type="text" name="Fiyat"  class="form-control" id="txt2" onkeyup="sum" />
+    <br />
+    @Html.LabelFor(x => x.ToplamTutar)
+    <input type="text" name="ToplamTutar"  class="form-control" id="txt3"   />
+    <br />
+    @Html.LabelFor(x => x.Durum)
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    <button class=" btn btn-success" style="background-color:forestgreen">Satış Yap</button>
+</form>
+<br />
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>

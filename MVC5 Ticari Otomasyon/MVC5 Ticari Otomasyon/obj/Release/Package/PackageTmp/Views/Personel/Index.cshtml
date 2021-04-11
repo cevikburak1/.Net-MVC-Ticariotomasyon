@@ -1,0 +1,55 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Personel Ad</td>
+            <td>Personel Soyad</td>
+            <td>Personel Görsel</td>
+            <td>Personel Departmanı</td>
+            <td>Sil</td>
+            <td>Güncelle</td>
+            <td>Detay</td>
+
+        </tr>
+    </thead>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.PersonelId</td>
+            <td>@k.PersonelAd</td>
+            <td>@k.PersonelSoyad</td>
+            <td><img src="@k.PersonelGörsel" style="width:150px; height:100px;"</td>
+            <td>@k.Departman.DepartmanAd</td>
+            <td><a href="/Personel/PersonelSil/@k.PersonelId" class="btn btn-warning">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@k.PersonelId" class="btn btn-danger">Güncelle</a></td>
+            <td><a href="/Departanlar/DepartmanPersonelSatış/@k.PersonelId" class="btn btn-success" style="background-color:darkorchid">Satışları</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Personel/PersonelEkle" class="btn btn-warning" style="background-color:darkgray">Yeni Personel Ekle</a>
+
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>

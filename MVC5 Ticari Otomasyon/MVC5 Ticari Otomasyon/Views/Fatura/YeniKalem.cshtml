@@ -1,0 +1,29 @@
+﻿@using MVC5_Ticari_Otomasyon.Models.Sınıflar
+@model MVC5_Ticari_Otomasyon.Models.Sınıflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.acıklama)
+    @Html.TextBoxFor(x => x.acıklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Miktar)
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Birim)
+    @Html.TextBoxFor(x => x.Birim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Faturaıd)
+    @Html.TextBoxFor(x => x.Faturaıd, new { @class = "form-control" })
+   <br />
+    <button class="btn btn-success" style="background-color:darkkhaki">Kaydet</button>
+</form>
+

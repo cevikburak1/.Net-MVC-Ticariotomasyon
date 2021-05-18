@@ -1,5 +1,11 @@
 # MVC5-T-car--Otomasyon
-cari1 mail:vrebe@hotmail.com Şifre:123    cari2 mail:ytmumufy@hotmail.com   şifre: 123     Personel Ad:Burak   Şifre:123![resim1](https://user-images.githubusercontent.com/70022524/118641569-fa9cbd00-b7e2-11eb-8e76-c3566e92055a.png)
+cari1 mail:vrebe@hotmail.com Şifre:123    cari2 mail:ytmumufy@hotmail.com   şifre: 123     Personel Ad:Burak   Şifre:123
+
+Created Using .Net MVC
+
+We Get All of the Information on the Site from the Database
+
+![resim1](https://user-images.githubusercontent.com/70022524/118641569-fa9cbd00-b7e2-11eb-8e76-c3566e92055a.png)
 ![resim2](https://user-images.githubusercontent.com/70022524/118641630-0ee0ba00-b7e3-11eb-8f43-0867588a9f52.png)
 ![resim3](https://user-images.githubusercontent.com/70022524/118641632-0f795080-b7e3-11eb-8890-fd9899c19ec3.png)
 ![resim4](https://user-images.githubusercontent.com/70022524/118641633-1011e700-b7e3-11eb-95af-8e340cfa19a6.png)

@@ -2,6 +2,7 @@
 cari1 mail:vrebe@hotmail.com Şifre:123    cari2 mail:ytmumufy@hotmail.com   şifre: 123     Personel Ad:Burak   Şifre:123
 
 Created Using .Net MVC
+messaging among staff, giving random cargo tracking codes,and many more modules
 
 We Get All of the Information on the Site from the Database
 
